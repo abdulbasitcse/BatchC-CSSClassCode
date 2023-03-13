@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="username" secured="false" />
+    <script>
+      const ele = document.getElementById('username');
+      console.log('1. ele -', ele);
+
+      console.log('1. ele id -', ele.id);
+      console.log('1. ele type -', ele.type);
+      console.log('1. ele secured -', ele.secured);
+
+      console.log('2. ele id -', ele.getAttribute('id'));
+      console.log('2. ele type -', ele.getAttribute('type'));
+      console.log('2. ele secured -', ele.getAttribute('secured'));
+
+      ele.setAttribute('id', 'newId');
+      console.log('3. ele id -', ele.getAttribute('id'));
+
+      ele.setAttribute('class', 'input-class');
+      console.log('4. ele class -', ele.getAttribute('class'));
+      console.log('4. ele className -', ele.getAttribute('className'));
+      console.log('4. ele className -', ele.className);
+      console.log('4. ele class -', ele.class);
+
+      console.log('5. ele class -', ele.hasAttribute('class'));
+      console.log('5. ele value -', ele.hasAttribute('value'));
+
+      ele.setAttribute('value', 'input');
+      console.log('6. ele value -', ele.hasAttribute('value'));
+
+      ele.removeAttribute('value');
+      console.log('7. ele value -', ele.hasAttribute('value'));
+
+      //   Way 1
+      //   ele.style.backgroundColor = 'red';
+      //   ele.style.padding = '8px';
+      //   ele.style.color = 'white';
+      //   ele.style.fontSize = '30px';
+      //   Way 2
+      //   ele.setAttribute('style', 'background-color: red; padding: 8px; color: white; font-size: 30px');
+
+      // Way 3
+      ele.style['background-color'] = 'red';
+      ele.style.padding = '8px';
+      ele.style.color = 'white';
+      ele.style['font-size'] = '30px';
+
+      //   const obj = {
+      //     name: 'HI',
+      //     'd-o-b': 'Invalid',
+      //   };
+
+      //   console.log('name', obj.name);
+      //   console.log('d-o-b', obj['d-o-b']);
+
+      const currentStyle = ele.getAttribute('style');
+      const newStyle = currentStyle + 'border-radius: 12px; border-width: 20px';
+
+      ele.setAttribute('style', newStyle);
+
+      console.log('currentStyle', currentStyle);
+    </script>
+  </body>
+</html>
